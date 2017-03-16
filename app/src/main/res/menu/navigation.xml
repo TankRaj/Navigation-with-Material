@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_card"
+        android:icon="@android:drawable/sym_contact_card"
+        android:title="@string/title_card" />
+
+    <item
+        android:id="@+id/navigation_message"
+        android:icon="@drawable/ic_menu_send"
+        android:title="@string/title_message" />
+
+    <item
+        android:id="@+id/navigation_camera"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="@string/title_camera" />
+    <item
+        android:id="@+id/navigation_exchange"
+        android:icon="@drawable/ic_menu_share"
+        android:title="@string/title_exchange" />
+
+    <item
+        android:id="@+id/navigation_user"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="@string/title_user" />
+
+</menu>
