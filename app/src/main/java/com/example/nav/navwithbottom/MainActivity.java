@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_add_card);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +89,8 @@ public class MainActivity extends AppCompatActivity
         //listener for bottom navigation
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        initViews();
     }
 
     private void initViews() {
@@ -173,11 +176,9 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_card_list) {
-            // Handle the camera action
         } else if (id == R.id.nav_events) {
 
         } else if (id == R.id.nav_category) {
