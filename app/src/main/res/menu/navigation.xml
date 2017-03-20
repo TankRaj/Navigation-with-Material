@@ -3,26 +3,26 @@
 
     <item
         android:id="@+id/navigation_card"
-        android:icon="@drawable/ic_card"
+        android:icon="@drawable/ic_credit_card_black_48dp"
         android:title="@string/title_card" />
 
     <item
         android:id="@+id/navigation_message"
-        android:icon="@drawable/mail"
+        android:icon="@drawable/ic_message_black_48dp"
         android:title="@string/title_message" />
 
     <item
         android:id="@+id/navigation_camera"
-        android:icon="@drawable/ic_camera"
+        android:icon="@drawable/ic_camera_black_48dp"
         android:title="@string/title_camera" />
     <item
         android:id="@+id/navigation_exchange"
-        android:icon="@drawable/shuffle"
+        android:icon="@drawable/ic_track_changes_black_48dp"
         android:title="@string/title_exchange" />
 
     <item
         android:id="@+id/navigation_user"
-        android:icon="@drawable/user"
+        android:icon="@drawable/ic_account_circle_black_48dp"
         android:title="@string/title_user" />
 
 </menu>

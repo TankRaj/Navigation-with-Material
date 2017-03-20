@@ -1,10 +1,12 @@
 package com.example.nav.navwithbottom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ArrayList cards;
+    protected NavigationView navigationView;
+    Fragment messageFragment = null;
+    Class messageClass;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -39,8 +44,10 @@ public class MainActivity extends AppCompatActivity
 //                    mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_message:
-//                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
+//                    fragmentClass = FirstFragment.class;
+//                    messageClass = MessageList.class;
+                    break;
+
                 case R.id.navigation_camera:
 //                    mTextMessage.setText(R.string.title_notifications);
                     return true;
@@ -48,7 +55,8 @@ public class MainActivity extends AppCompatActivity
 //                    mTextMessage.setText(R.string.title_notifications);
                     return true;
                 case R.id.navigation_user:
-//                    mTextMessage.setText(R.string.title_notifications);
+                    Intent intent = new Intent(getApplicationContext(),UserActivity.class);
+                    startActivity(intent);
                     return true;
             }
             return false;
