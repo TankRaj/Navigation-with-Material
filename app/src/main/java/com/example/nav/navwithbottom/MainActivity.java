@@ -7,6 +7,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -30,24 +32,27 @@ public class MainActivity extends AppCompatActivity
 
     private ArrayList cards;
     protected NavigationView navigationView;
-    Fragment messageFragment = null;
-    Class messageClass;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
+        final FragmentManager fragmentManager = getSupportFragmentManager();
+        gfinal Fragment fragment1 = new ConnectFragment();
+
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            Fragment fragment = null;
+
             switch (item.getItemId()) {
                 case R.id.navigation_card:
 //                    mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_message:
-//                    fragmentClass = FirstFragment.class;
-//                    messageClass = MessageList.class;
-                    break;
-
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.content, fragment1).commit();
+                    return true;
                 case R.id.navigation_camera:
 //                    mTextMessage.setText(R.string.title_notifications);
                     return true;
@@ -55,11 +60,23 @@ public class MainActivity extends AppCompatActivity
 //                    mTextMessage.setText(R.string.title_notifications);
                     return true;
                 case R.id.navigation_user:
-                    Intent intent = new Intent(getApplicationContext(),UserActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), UserActivity.class);
                     startActivity(intent);
                     return true;
+                default:
+                    break;
+            }
+
+
+            if (fragment != null) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+
+            } else {
+                Log.e("MainActivity", "Error in creating fragment");
             }
             return false;
+
         }
 
     };
@@ -91,7 +108,7 @@ public class MainActivity extends AppCompatActivity
         //listener for navigation drawer items
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        Log.d("Nav drawer","working fine");
+        Log.d("Nav drawer", "working fine");
 
 
         //listener for bottom navigation

@@ -13,6 +13,7 @@
     <string name="title_user">User</string>
     <string name="text_content">text to fill up</string>
     <string name="user_name">User One</string>
+    <string name="txt_messages">Messages Fragment</string>
 
 
 </resources>
