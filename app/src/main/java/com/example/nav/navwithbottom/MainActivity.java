@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         final FragmentManager fragmentManager = getSupportFragmentManager();
-        gfinal Fragment fragment1 = new ConnectFragment();
+        final Fragment fragment1 = new ConnectFragment();
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
